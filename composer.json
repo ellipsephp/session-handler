@@ -3,8 +3,11 @@
     "type": "library",
     "description": "Psr-15 middleware allowing to set a custom session handler",
     "keywords": [
-        "psr-6",
-        "session"
+        "psr-15",
+        "middleware",
+        "session",
+        "handler",
+        "session-handler"
     ],
     "license": "MIT",
     "homepage": "https://github.com/ellipsephp/session-handler",
