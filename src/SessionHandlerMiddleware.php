@@ -11,6 +11,8 @@ use Psr\Http\Message\ResponseInterface;
 use Interop\Http\Server\MiddlewareInterface;
 use Interop\Http\Server\RequestHandlerInterface;
 
+use Ellipse\Session\Exceptions\SessionHandlerCantBeSetException;
+
 class SessionHandlerMiddleware implements MiddlewareInterface
 {
     /**
@@ -46,6 +48,6 @@ class SessionHandlerMiddleware implements MiddlewareInterface
 
         }
 
-        throw new RuntimeException('session_set_save_handler failed');
+        throw new SessionHandlerCantBeSetException;
     }
 }

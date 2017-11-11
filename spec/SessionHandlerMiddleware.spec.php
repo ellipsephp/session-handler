@@ -9,6 +9,7 @@ use Interop\Http\Server\MiddlewareInterface;
 use Interop\Http\Server\RequestHandlerInterface;
 
 use Ellipse\Session\SessionHandlerMiddleware;
+use Ellipse\Session\Exceptions\SessionHandlerCantBeSetException;
 
 describe('SessionHandlerMiddleware', function () {
 
@@ -55,7 +56,7 @@ describe('SessionHandlerMiddleware', function () {
 
         context('when the session_set_save_handler method returns false', function () {
 
-            it('should throw a RuntimeException', function () {
+            it('should throw a SessionHandlerCantBeSetException', function () {
 
                 allow('session_set_save_handler')->toBeCalled()->with($this->newhandler)->andReturn(false);
 
@@ -65,7 +66,7 @@ describe('SessionHandlerMiddleware', function () {
 
                 };
 
-                $exception = new RuntimeException('session_set_save_handler failed');
+                $exception = new SessionHandlerCantBeSetException;
 
                 expect($test)->toThrow($exception);
 
