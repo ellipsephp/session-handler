@@ -8,16 +8,16 @@ use Psr\Http\Message\ResponseInterface;
 use Interop\Http\Server\MiddlewareInterface;
 use Interop\Http\Server\RequestHandlerInterface;
 
-use Ellipse\Session\SessionHandlerMiddleware;
+use Ellipse\Session\SetSessionHandlerMiddleware;
 use Ellipse\Session\Exceptions\SessionHandlerCantBeSetException;
 
-describe('SessionHandlerMiddleware', function () {
+describe('SetSessionHandlerMiddleware', function () {
 
     beforeEach(function () {
 
         $this->newhandler = mock(SessionHandlerInterface::class)->get();
 
-        $this->middleware = new SessionHandlerMiddleware($this->newhandler);
+        $this->middleware = new SetSessionHandlerMiddleware($this->newhandler);
 
     });
 

@@ -13,7 +13,7 @@ use Interop\Http\Server\RequestHandlerInterface;
 
 use Ellipse\Session\Exceptions\SessionHandlerCantBeSetException;
 
-class SessionHandlerMiddleware implements MiddlewareInterface
+class SetSessionHandlerMiddleware implements MiddlewareInterface
 {
     /**
      * The session handler to use.
