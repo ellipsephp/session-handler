@@ -22,7 +22,7 @@ namespace App;
 use Cache\Adapter\Predis\PredisCachePool;
 use Cache\SessionHandler\Psr6SessionHandler;
 
-use Ellipse\Session\SessionHandlerMiddleware;
+use Ellipse\Session\SetSessionHandlerMiddleware;
 
 // Get an implementation of php SessionHandlerInterface. Here a session handler
 // managing data with redis is used.
