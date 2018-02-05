@@ -1,6 +1,6 @@
 # Session handler
 
-This package provides a Psr-15 middleware allowing to set a custom session handler to your application.
+This package provides a [Psr-15 middleware](https://www.php-fig.org/psr/psr-15/) allowing to set a custom session handler to your application.
 
 **Require** php >= 7.1
 
