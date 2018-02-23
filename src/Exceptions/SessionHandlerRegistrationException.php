@@ -4,7 +4,7 @@ namespace Ellipse\Session\Exceptions;
 
 use RuntimeException;
 
-class SessionHandlerCantBeSetException extends RuntimeException
+class SessionHandlerRegistrationException extends RuntimeException implements SessionHandlerExceptionInterface
 {
     public function __construct()
     {

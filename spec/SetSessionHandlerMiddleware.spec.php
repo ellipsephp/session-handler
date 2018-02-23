@@ -8,7 +8,7 @@ use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 
 use Ellipse\Session\SetSessionHandlerMiddleware;
-use Ellipse\Session\Exceptions\SessionHandlerCantBeSetException;
+use Ellipse\Session\Exceptions\SessionHandlerRegistrationException;
 
 describe('SetSessionHandlerMiddleware', function () {
 
@@ -55,7 +55,7 @@ describe('SetSessionHandlerMiddleware', function () {
 
         context('when the session_set_save_handler method returns false', function () {
 
-            it('should throw a SessionHandlerCantBeSetException', function () {
+            it('should throw a SessionHandlerRegistrationException', function () {
 
                 allow('session_set_save_handler')->toBeCalled()->with($this->newhandler)->andReturn(false);
 
@@ -65,7 +65,7 @@ describe('SetSessionHandlerMiddleware', function () {
 
                 };
 
-                $exception = new SessionHandlerCantBeSetException;
+                $exception = new SessionHandlerRegistrationException;
 
                 expect($test)->toThrow($exception);
 

@@ -10,7 +10,7 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 
-use Ellipse\Session\Exceptions\SessionHandlerCantBeSetException;
+use Ellipse\Session\Exceptions\SessionHandlerRegistrationException;
 
 class SetSessionHandlerMiddleware implements MiddlewareInterface
 {
@@ -37,7 +37,7 @@ class SetSessionHandlerMiddleware implements MiddlewareInterface
      * @param \Psr\Http\Message\ServerRequestInterface  $request
      * @param \Psr\Http\Server\RequestHandlerInterface  $handler
      * @return \Psr\Http\Message\ResponseInterface
-     * @throws RuntimeException
+     * @throws \Ellipse\Session\Exceptions\SessionHandlerRegistrationException
      */
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
@@ -47,6 +47,6 @@ class SetSessionHandlerMiddleware implements MiddlewareInterface
 
         }
 
-        throw new SessionHandlerCantBeSetException;
+        throw new SessionHandlerRegistrationException;
     }
 }
